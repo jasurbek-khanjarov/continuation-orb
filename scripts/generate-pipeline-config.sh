@@ -1,9 +1,8 @@
 #!/bin/bash
 
 BRANCH_NAME=$1
-COMMIT_TAG=$2
 
-NODE_SUB='node'
+NODE_SUB='nodejs'
 # config_content=`cat ./default_config.yml`
 if [[ "$BRANCH_NAME" == *"$NODE_SUB"* ]];
 then
