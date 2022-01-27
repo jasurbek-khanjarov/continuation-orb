@@ -1,0 +1,23 @@
+{
+  "name": "node-js-sample",
+  "version": "0.2.0",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "cover": "nyc --reporter=lcov --reporter=text npm run test"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "jest": "^26.6.3",
+    "nyc": "^15.1.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nyc": "^15.1.0"
+  },
+  "engines": {
+    "node": "16.10.0"
+  }
+}
