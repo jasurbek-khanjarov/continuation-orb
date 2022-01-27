@@ -1,10 +1,9 @@
 #!/bin/bash
 
 BRANCH_NAME=$1
-
 NODE_SUB='nodejs'
 # config_content=`cat ./default_config.yml`
-if [[ "$BRANCH_NAME" == *"$NODE_SUB"* ]];
+if [[ "$BRANCH_NAME" == *"$NODE_SUB"* ]]
 then
   mkdir configs/
 cat << EOF > configs/generated_config.yml
