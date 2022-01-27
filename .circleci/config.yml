@@ -9,6 +9,7 @@ jobs:
     executor: continuation/default
     steps:
       - checkout
+      - run: rm -rf configs
       - run:
           name: Generate Pipeline generated_config.yml file
           command: |
