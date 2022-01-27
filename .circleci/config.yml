@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Generate Pipeline generated_config.yml file
-          command: ./scripts/generate-pipeline-config << pipeline.git.branch >> << pipeline.git.tag >>
+          command: sudo ./scripts/generate-pipeline-config << pipeline.git.branch >> << pipeline.git.tag >>
       - continuation/continue:
           parameters: '{}'
           configuration_path: configs/generated_config.yml
