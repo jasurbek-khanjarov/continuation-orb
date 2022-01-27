@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 set -o pipefail
 
 BRANCH_NAME=$1
