@@ -14,7 +14,7 @@ jobs:
           command: |
             rm -rf configs
             chmod +x ./scripts/generate-pipeline-config.sh |
-            sh ./scripts/generate-pipeline-config.sh "<< pipeline.git.branch >>"
+            bash ./scripts/generate-pipeline-config.sh "<< pipeline.git.branch >>"
       - continuation/continue:
           parameters: '{}'
           configuration_path: configs/generated_config.yml
