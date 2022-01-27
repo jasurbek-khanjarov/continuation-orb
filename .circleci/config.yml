@@ -13,7 +13,7 @@ jobs:
           name: Generate Pipeline generated_config.yml file
           command: |
             chmod +x ./scripts/generate-pipeline-config.sh |
-            sh ./scripts/generate-pipeline-config.sh << pipeline.git.branch >>
+            sh ./scripts/generate-pipeline-config.sh "<< pipeline.git.branch >>"
       - continuation/continue:
           parameters: '{}'
           configuration_path: configs/generated_config.yml
