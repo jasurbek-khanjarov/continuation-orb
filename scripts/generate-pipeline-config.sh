@@ -1,5 +1,4 @@
 #!/bin/bash
-set -o pipefail
 
 BRANCH_NAME=$1
 COMMIT_TAG=$2
