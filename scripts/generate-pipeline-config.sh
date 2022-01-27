@@ -17,6 +17,7 @@ jobs:
       - image: cimg/node:17.4.0
     steps:
       - checkout
+      - run: echo $BRANCH_NAME
       - run: echo "Node Project"
 workflows:
   test_workflow:
@@ -35,6 +36,7 @@ jobs:
       - image: cimg/base:2022.01
     steps:
       - checkout
+      - run: echo $BRANCH_NAME
       - run: echo "Base Project"
 workflows:
   test_workflow:
