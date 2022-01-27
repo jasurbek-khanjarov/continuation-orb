@@ -4,37 +4,42 @@ BRANCH_NAME=$1
 COMMIT_TAG=$2
 
 NODE_SUB='node'
-mkdir configs/
+# config_content=`cat ./default_config.yml`
 if [[ "$BRANCH_NAME" == *"$NODE_SUB"* ]];
 then
-  cat << EOF > configs/generated_config.yml
-  version: 2.1
-  jobs:
-    test_1:
-      docker:
-        - image: cimg/base:2022.01
-      steps:
-        - checkout
-        - run: echo "Node Project"
-  workflows:
-    test_workflow:
-      jobs:
-        - test_1
-  EOF
-else
-  cat << EOF > configs/generated_config.yml
-  version: 2.1
-  jobs:
-    test_1:
-      docker:
-        - image: cimg/base:2022.01
-      steps:
-        - checkout
-        - run: echo "PHP Project"
+  mkdir configs/
+cat << EOF > configs/generated_config.yml
 
-  workflows:
-    test_workflow:
-      jobs:
-        - test_1
-  EOF
+version: 2.1
+jobs:
+  node_test_1:
+    docker:
+      - image: cimg/node:17.4.0
+    steps:
+      - checkout
+      - run: echo "Node Project"
+workflows:
+  test_workflow:
+    jobs:
+      - node_test_1
+
+EOF
+else
+  mkdir configs/
+cat << EOF > configs/generated_config.yml
+
+version: 2.1
+jobs:
+  base_test_1:
+    docker:
+      - image: cimg/base:2022.01
+    steps:
+      - checkout
+      - run: echo "Base Project"
+workflows:
+  test_workflow:
+    jobs:
+      - base_test_1
+
+EOF
 fi
