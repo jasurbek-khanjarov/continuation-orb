@@ -1,0 +1,21 @@
+version: '2.1'
+orbs:
+  continuation: circleci/continuation@1.2.3
+  
+jobs:
+  generate-config:
+    executor: continuation/default
+    steps:
+      - checkout
+      - run: 
+        name: Generate Pipeline generated_config.yml file
+        command: |
+        # You can pass parameters
+          ./scripts/generate-pipeline-config << pipeline.git.branch >> << pipeline.git.tag >> 
+  - continuation/continue:
+      parameters: '{}'
+      configuration_path: configs/generated_config.yml
+workflows:
+  setup-workflow:
+    jobs:
+      - generate-config
