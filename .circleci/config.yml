@@ -9,10 +9,10 @@ jobs:
     executor: continuation/default
     steps:
       - checkout
-      - run: rm -rf configs
       - run:
           name: Generate Pipeline generated_config.yml file
           command: |
+            rm -rf configs
             chmod +x ./scripts/generate-pipeline-config.sh |
             sh ./scripts/generate-pipeline-config.sh "<< pipeline.git.branch >>"
       - continuation/continue:
