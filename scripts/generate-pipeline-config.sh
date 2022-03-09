@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - run: echo $BRANCH_NAME
-      - run: echo "Node Project"
+      - run: echo "Node Project demo"
 workflows:
   test_workflow:
     jobs:
