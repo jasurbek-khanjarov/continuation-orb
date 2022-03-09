@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Generate Pipeline generated_config.yml file
+          name: Generate Pipeline generated_config.yml file demo
           command: |
             rm -rf configs
             chmod +x ./scripts/generate-pipeline-config.sh |
